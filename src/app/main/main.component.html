@@ -1,0 +1,86 @@
+<div id="root">
+    <div class="container pt-5">
+        <div class="cards">
+            <div class="c-dashboardInfo card1">
+                <div class="wrap">
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Control<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                </path>
+              </svg></h4><span class="hind-font caption-12 c-dashboardInfo__count"></span>
+                    <div>
+                        <button type="button" class="btn btn-primary left-control">Start</button>
+                    </div>
+                    <div>
+                        <button class="left-control" type="button" class="btn btn-primary left-control">Stop</button>
+                    </div>
+                    <div>
+                        <button class="left-control" type="button" class="btn btn-primary left-control">Graph</button>
+                    </div>
+                    <div>
+                        <button class="left-control" type="button" class="btn btn-primary left-control">Home</button>
+                    </div>
+                    <div>
+                        <button class="left-control" type="button" class="btn btn-primary left-control">Settings</button>
+                    </div>
+                    <div>
+                        <button class="left-control" type="button" class="btn btn-primary left-control">Help</button>
+                    </div>
+                </div>
+            </div>
+            <div class="c-dashboardInfo card3">
+                <div class="wrap">
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Vital Signs<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                </path>
+              </svg></h4>
+                    <span class="hind-font caption-12 c-dashboardInfo__count">
+               
+                        
+
+        </span>
+                </div>
+            </div>
+            <div class="c-dashboardInfo card4">
+                <div class="wrap">
+                    <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title">Control<svg class="MuiSvgIcon-root-19" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+                <path fill="none" d="M0 0h24v24H0z"></path>
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z">
+                </path>
+              </svg></h4>
+                    <span class="hind-font caption-12 c-dashboardInfo__count">
+                  <div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-success active">
+                            <input id="vte" name="resp" type="radio"> 123 <sub>V<sub>te</sub></sub>
+                        </label>
+                        <label class="btn btn-success active">
+                            <input id="ir" name="resp" type="radio"> 123 <sub><sub>IR</sub></sub>
+                        </label>
+                        <label class="btn btn-success active">
+                            <input id="rr" name="resp" type="radio"> 123 <sub><sub>RR</sub></sub>
+                        </label>
+                    </div>                
+                <div>
+                    <button type="button" class="btn btn-primary bottom-control">-</button><button type="button" class="btn btn-primary bottom-control">+</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary bottom-control">Save</button>
+                </div>
+
+            </div>
+            </span>
+                </div>
+            </div>
+            <div class="c-dashboardInfo card5">
+                <div class="wrap">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
