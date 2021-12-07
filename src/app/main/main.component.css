@@ -128,3 +128,15 @@
     grid-template-columns: 1fr;
     grid-gap: 4px;
 }
+
+.vitals {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: small;
+    grid-gap: 1em;
+    align-items: center;
+}
+
+.vitals>* {
+    background-color: #d3c3d2;
+}

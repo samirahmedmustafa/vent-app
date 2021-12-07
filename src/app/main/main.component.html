@@ -39,8 +39,24 @@
               </svg></h4>
                     <span class="hind-font caption-12 c-dashboardInfo__count">
                
-                        
-
+                        <div class="vitals">
+                            <div class="vital_vte">
+                                V<sub>te</sub>
+                                <h4>{{vte}}</h4>
+                            </div>
+                            <div class="vital_vte">
+                                V<sub>peak</sub>
+                                <h4>123</h4>
+                            </div>
+                            <div class="vital_vte">
+                                P<sub>mean</sub>
+                                <h4>123</h4>
+                            </div>
+                            <div class="vital_vte">
+                                O<sub>2</sub>
+                                <h4>123</h4>
+                            </div>
+                        </div>
         </span>
                 </div>
             </div>
@@ -78,7 +94,9 @@
             </div>
             <div class="c-dashboardInfo card5">
                 <div class="wrap">
-                    <router-outlet></router-outlet>
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

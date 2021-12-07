@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { GraphComponent } from './graph/graph.component';
 
 const routes: Routes = [
-  { path: "graph", component: GraphComponent},
-  { path: "", redirectTo: "/graph", pathMatch: "full"}
+  // { path: "graph", component: GraphComponent},
+  // { path: "", redirectTo: "/graph", pathMatch: "full"}
 ];
 
 @NgModule({
