@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { ControlService } from '../services/control.service';
 
 @Component({
   selector: 'app-main',
@@ -13,13 +14,32 @@ export class MainComponent implements OnInit {
   labels = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  constructor() { }
+  constructor(private service: ControlService) { }
+
+  start() {
+    this.service.changeState(1).subscribe();
+  }
+
+  stop() {
+    this.service.changeState(0).subscribe();
+  }
+
+  getTemp() {
+    this.service.getTemp().subscribe(
+      (data: {"ambient": number, "object_1": number}) => {
+        let currentTime = this.getDate();
+        this.vte = data.object_1;
+        this.addData(data.object_1, currentTime);
+      },
+      error => console.log(`getTemp error: `, error.message)
+    );
+  }
 
   ngOnInit(): void {
     this.drawChart();
     // setInterval(() => {console.log("23423234"), 5000});
     setInterval(() => {
-      this.updateChart();
+      this.getTemp();
     }, 1000);
 
   }
@@ -76,14 +96,14 @@ export class MainComponent implements OnInit {
             'rgba(153, 102, 255, 0.2)',
             'rgba(255, 159, 64, 0.2)'
           ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          // borderColor: [
+          //   'rgba(255, 99, 132, 1)',
+          //   'rgba(54, 162, 235, 1)',
+          //   'rgba(255, 206, 86, 1)',
+          //   'rgba(75, 192, 192, 1)',
+          //   'rgba(153, 102, 255, 1)',
+          //   'rgba(255, 159, 64, 1)'
+          // ],
           borderWidth: 1
         }]
       },
@@ -95,7 +115,7 @@ export class MainComponent implements OnInit {
             ticks: {
               min: 0, // minimum value
               max: 40, // maximum value
-              stepSize: 10
+              stepSize: 5
             }
           }],
           xAxes: [{
